@@ -8,7 +8,7 @@ const DATA = {
   fullName:  "Thotakura Lohit Kumar",
   role:      "Software Engineer ✦ Presenter ✦ Quick Learner",
   tagline:   "Backend Engineer · Spring Boot · Microservices",
-  bio:       "I build scalable RESTful APIs and backend systems that actually ship to production. Currently pursuing M.Tech while engineering things that work.",
+  bio:       "Product-focused Java Backend Developer skilled in rapidly building and deploying REST APIs using Spring Boot and Microservices. Experienced in end-to-end development, database optimization, and integrating AI/NLP features for real-world applications.",
   email:     "lohitkumar0103@gmail.com",
   phone:     "+91-6303082637",
   linkedin:  "https://linkedin.com/in/lohitkumar7",
@@ -26,13 +26,13 @@ const DATA = {
   ],
 
   skills: [
-    { category: "Languages",      items: ["Java", "Python"] },
+    { category: "Languages",      items: ["Java", "Python", "HTML", "CSS"] },
     { category: "Frameworks",     items: ["Spring Boot", "Spring Security", "Hibernate", "REST APIs"] },
-    { category: "Databases",      items: ["PostgreSQL", "MySQL"] },
+    { category: "Databases",      items: ["MySQL"] },
     { category: "DevOps & Tools", items: ["Docker", "Git", "GitHub", "Maven", "Postman", "Eclipse"] },
     { category: "Architecture",   items: ["Microservices", "MVC", "OOP", "Dependency Injection"] },
-    { category: "Core Concepts",  items: ["JWT Auth", "DSA", "Exception Handling"] },
-    { category: "Practices",      items: ["Agile/Scrum", "Version Control", "CI/CD"] },
+    { category: "Core Concepts",  items: ["JWT Auth", "DSA", "Exception Handling", "Unit Testing"] },
+    { category: "Practices",      items: ["Agile/Scrum", "Version Control"] },
   ],
 
   experience: [
@@ -42,8 +42,8 @@ const DATA = {
       period:  "Aug 2024 – Oct 2024",
       type:    "Remote",
       points: [
-        "Built 20+ REST APIs using Spring Boot layered architecture (Controller → Service → Repository)",
-        "Optimized PostgreSQL schema and queries for high concurrency — cut execution time by 35%",
+        "Developed 20+ REST APIs using Spring Boot layered architecture (Controller → Service → Repository)",
+        "Optimized MySQL schema and queries for high concurrency — cut execution time by 35%",
         "Validated 25+ API endpoints via Postman across 10+ sprint cycles",
         "Collaborated with QA & frontend to deliver production-ready backend services",
         "Supported cloud deployment & environment config for scalable delivery",
@@ -53,20 +53,20 @@ const DATA = {
 
   projects: [
     {
+      title:  "Personalized News Aggregator",
+      url:    "https://github.com/Tlohitkumar/NewsAggregator",
+      tag:    "GitHub",
+      stack:  ["Java", "React", "MySQL", "JWT", "Python (Flask)", "NLP"],
+      impact: "AI + Bias Detection",
+      desc:   "Scalable news platform with Spring Boot, React & MySQL delivering personalized real-time news. Features NLP-based bias & sentiment engine classifying content as Left, Right, or Neutral.",
+    },
+    {
       title:  "Bank Statement Categorizer",
       url:    "https://bankstatementcategorizer.vercel.app/",
       tag:    "Live",
       stack:  ["Java", "Spring Boot", "MySQL", "NLP"],
       impact: "90% NLP accuracy",
       desc:   "Backend transaction engine processing 200+ transactions with automated NLP-based expense categorization and real-time financial data processing.",
-    },
-    {
-      title:  "E-Commerce Store",
-      url:    "https://github.com/EcommerceStore",
-      tag:    "GitHub",
-      stack:  ["Java", "Spring Boot", "MySQL", "JPA"],
-      impact: "20+ DB tables",
-      desc:   "Full backend with Spring Data JPA across 20+ relational tables, 5+ CRUD operations, and modular OOP component design.",
     },
     {
       title:  "Patient Management System",
@@ -171,9 +171,22 @@ const css = `
   .eyebrow-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);border:var(--border);animation:pulse 2s ease infinite;}
   .hero-name{font-family:'Instrument Serif',serif;font-size:clamp(2.6rem,7vw,7rem);font-weight:400;line-height:.95;letter-spacing:-.02em;color:var(--ink);white-space:nowrap;}
   .hero-name em{font-style:italic;color:var(--ink);}
-  .hero-role-pill{background:var(--gold);color:#fff;border:var(--border);border-radius:100px;overflow:hidden;box-shadow:var(--shadow);display:inline-flex;align-items:center;font-family:'Cabinet Grotesk',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;height:fit-content;margin-top:14px;flex-shrink:0;}
-  .pill-seg{padding:10px 16px;white-space:nowrap;}
-  .pill-seg:not(:last-child){border-right:2px solid rgba(255,255,255,.25);}
+  .hero-role-pill {
+    background: var(--gold); color: #fff;
+    border: var(--border); border-radius: 100px;
+    overflow: hidden; box-shadow: var(--shadow);
+    display: inline-flex; align-items: stretch;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: .7rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+    height: fit-content; margin-top: 14px; flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .pill-seg {
+    padding: 11px 15px;
+    display: flex; align-items: center; justify-content: center;
+    white-space: nowrap; line-height: 1;
+  }
+  .pill-seg:not(:last-child) { border-right: 2px solid rgba(255,255,255,.25); }
   .hero-contact-strip{display:flex;flex-wrap:wrap;border:var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-gold);margin-top:16px;}
   .hc-item{display:flex;align-items:center;gap:7px;padding:9px 18px;border-right:var(--border);font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.03em;background:var(--white);color:var(--ink);text-decoration:none;transition:background .15s;white-space:nowrap;}
   .hc-item:first-child{background:var(--gold-pale);}
@@ -319,9 +332,9 @@ const css = `
 `;
 
 const TICKER_ITEMS = [
-  "Software Engineer","Spring Boot","REST APIs","PostgreSQL",
+  "Software Engineer","Spring Boot","REST APIs","MySQL",
   "Microservices","Docker","JWT Auth","Agile/Scrum",
-  "Quick Learner","Backend Engineering","Open Source",
+  "Quick Learner","NLP & AI Features","Open Source","Cycling & Tech News",
 ];
 
 export default function Portfolio() {
