@@ -13,6 +13,7 @@ const DATA = {
   phone:     "+91-6303082637",
   linkedin:  "https://linkedin.com/in/lohitkumar7",
   github:    "https://github.com/Tlohitkumar",
+  leetcode:  "https://leetcode.com/u/lohit_23/",
   location:  "Vijayawada, India",
   degree:    "Masters in Computer Science",
   resumeUrl: "/Lohit_Resume_Software_Engineer.pdf",
@@ -54,7 +55,7 @@ const DATA = {
   projects: [
     {
       title:  "Personalized News Aggregator",
-      url:    "https://github.com/Tlohitkumar/NewsAggregator",
+      url:    "https://github.com/Tlohitkumar/Personalized-News-Aggregator-with-Bias-Detection",
       tag:    "GitHub",
       stack:  ["Java", "React", "MySQL", "JWT", "Python (Flask)", "NLP"],
       impact: "AI + Bias Detection",
@@ -70,7 +71,7 @@ const DATA = {
     },
     {
       title:  "Patient Management System",
-      url:    "https://github.com/PatientManagementSystem",
+      url:    "https://github.com/Tlohitkumar/java-spring-microservices",
       tag:    "GitHub",
       stack:  ["Spring Microservices", "PostgreSQL", "Docker", "JWT"],
       impact: "Dockerized",
@@ -187,11 +188,39 @@ const css = `
     white-space: nowrap; line-height: 1;
   }
   .pill-seg:not(:last-child) { border-right: 2px solid rgba(255,255,255,.25); }
-  .hero-contact-strip{display:flex;flex-wrap:wrap;border:var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-gold);margin-top:16px;}
-  .hc-item{display:flex;align-items:center;gap:7px;padding:9px 18px;border-right:var(--border);font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.03em;background:var(--white);color:var(--ink);text-decoration:none;transition:background .15s;white-space:nowrap;}
+  .hero-contact-strip{
+    display:inline-flex;flex-wrap:wrap;
+    border:var(--border);border-radius:var(--r);
+    overflow:hidden;box-shadow:var(--shadow-gold);
+    margin-top:16px;width:auto;
+  }
+  .hc-item{
+    display:flex;align-items:center;gap:8px;
+    padding:11px 20px;border-right:var(--border);
+    font-family:'JetBrains Mono',monospace;
+    font-size:.67rem;font-weight:500;letter-spacing:.02em;
+    background:var(--white);color:var(--ink);
+    text-decoration:none;transition:background .15s;
+    white-space:nowrap;line-height:1;height:42px;
+  }
   .hc-item:first-child{background:var(--gold-pale);}
   .hc-item:last-child{border-right:none;}
   .hc-item:hover{background:var(--gold-pale);}
+  .hc-icon{font-size:.82rem;flex-shrink:0;line-height:1;}
+  /* LeetCode floating badge */
+  .leetcode-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--ink);color:var(--gold-light);
+    border:var(--border);border-radius:100px;
+    padding:8px 18px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.68rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+    text-decoration:none;box-shadow:var(--shadow-gold);
+    transition:background .15s,box-shadow .15s,transform .15s;
+    margin-top:12px;
+  }
+  .leetcode-badge:hover{background:#2d2010;box-shadow:2px 2px 0 var(--gold);transform:translate(2px,2px);}
+  .lc-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);border:1.5px solid var(--gold-light);display:inline-block;}
   .hero-bottom{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:end;border-top:var(--border);padding-top:32px;}
   .hero-bio{font-family:'Instrument Serif',serif;font-size:clamp(1.05rem,2vw,1.3rem);line-height:1.65;color:#5a4a28;font-style:italic;margin-bottom:20px;}
   .hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
@@ -317,8 +346,8 @@ const css = `
     .hero-role-pill{align-self:flex-start;}
     .hero-bottom{grid-template-columns:1fr;}
     .hero-stats{display:grid;grid-template-columns:1fr 1fr;}
-    .hero-contact-strip{flex-direction:column;}
-    .hc-item{border-right:none;border-bottom:var(--border);}
+    .hero-contact-strip{display:flex;flex-direction:column;width:100%;}
+    .hc-item{border-right:none;border-bottom:var(--border);height:auto;padding:10px 16px;}
     .hc-item:last-child{border-bottom:none;}
     .exp-wrapper{grid-template-columns:1fr;}
     .exp-sidebar{flex-direction:row;flex-wrap:wrap;align-items:center;padding:16px;}
@@ -405,10 +434,13 @@ export default function Portfolio() {
                 {DATA.name.split(" ")[0]} <em>{DATA.name.split(" ").slice(1).join(" ")}</em>
               </h1>
               <div className="hero-contact-strip">
-                <span className="hc-item">🎓 {DATA.degree}</span>
-                <a href={`mailto:${DATA.email}`} className="hc-item">✉ {DATA.email}</a>
-                <a href={`tel:${DATA.phone}`}    className="hc-item">📞 {DATA.phone}</a>
+                <span className="hc-item"><span className="hc-icon">🎓</span>{DATA.degree}</span>
+                <a href={`mailto:${DATA.email}`} className="hc-item"><span className="hc-icon">✉</span>{DATA.email}</a>
+                <a href={`tel:${DATA.phone}`}    className="hc-item"><span className="hc-icon">📞</span>{DATA.phone}</a>
               </div>
+              <a href={DATA.leetcode} target="_blank" rel="noreferrer" className="leetcode-badge">
+                <span className="lc-dot" /> LeetCode — lohit_23 ↗
+              </a>
             </div>
             <div className="hero-role-pill fade-in d2">
               <span className="pill-seg">Software Engineer</span>
@@ -587,6 +619,7 @@ export default function Portfolio() {
               <a href={`mailto:${DATA.email}`} className="footer-link">Email</a>
               <a href={DATA.linkedin} target="_blank" rel="noreferrer" className="footer-link">LinkedIn</a>
               <a href={DATA.github}   target="_blank" rel="noreferrer" className="footer-link">GitHub</a>
+              <a href={DATA.leetcode} target="_blank" rel="noreferrer" className="footer-link">LeetCode</a>
               <a href={`tel:${DATA.phone}`} className="footer-link">Phone</a>
               <a href={DATA.resumeUrl} download="Lohit_Kumar_Resume.pdf" className="footer-link">⬇ Resume</a>
             </div>
